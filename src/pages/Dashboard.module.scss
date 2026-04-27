@@ -1,0 +1,19 @@
+@use "../styles/tokens.scss" as *;
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  @include flex-center;
+  padding: $spacing-md;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+
+.active {
+  background-color: $color-primary;
+  color: #fff;
+}

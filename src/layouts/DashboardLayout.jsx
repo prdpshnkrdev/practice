@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
-import styles from "../styles/Layout.module.css";
+import styles from "../styles/Layout.module.scss";
 
 export default function DashboardLayout() {
   return (

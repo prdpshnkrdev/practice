@@ -1,0 +1,78 @@
+@use "../styles/tokens" as *;
+
+.loginContainer {
+  @include flex-center;
+  height: 100vh;
+}
+
+@include mobile {
+  .loginContainer {
+    padding: spacing(2);
+    height: auto;
+  }
+}
+
+.loginForm {
+  @include flex-column;
+  gap: $spacing-md;
+  width: 360px;
+  max-width: 100%;
+  padding: spacing(2);
+  border: 1px solid $border-color;
+  background: $background-color;
+  .title {
+    font-size: 1.5rem;
+    color: $font-color;
+    text-align: center;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    input {
+      padding: spacing(1);
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      font-size: medium;
+      &:focus {
+        border-color: $color-primary;
+        outline: none;
+      }
+    }
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    input {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .link {
+    color: $color-primary;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .submit {
+    padding: spacing(1);
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: medium;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-primary;
+      color: black;
+    }
+  }
+}
