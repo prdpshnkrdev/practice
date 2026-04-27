@@ -1,0 +1,21 @@
+@import "../styles/tokens.css";
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.active {
+  background-color: var(--color-primary);
+  color: #fff;
+}

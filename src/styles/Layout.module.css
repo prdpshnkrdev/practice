@@ -1,0 +1,51 @@
+.appGrid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 60px 1fr 40px;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  height: 100vh;
+}
+
+/* Areas */
+.header {
+  grid-area: header;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  border-right: 1px solid #ccc;
+}
+
+.main {
+  grid-area: main;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.footer {
+  grid-area: footer;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto 1fr 40px;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+  .sidebar {
+    display: none;
+  }
+}

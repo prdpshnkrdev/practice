@@ -1,0 +1,7 @@
+/* Sidebar */
+.sidebarInner {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
