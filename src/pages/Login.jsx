@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthContext";
 import styles from "./Login.module.scss";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -17,9 +20,11 @@ export default function Login() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle login logic here
+    await login(form);
+    navigate("/");
   };
 
   return (
@@ -78,7 +83,10 @@ export default function Login() {
           Login
         </button>
         <p>
-          Don't have an account? <Link to="/register">Register</Link>
+          Don't have an account?{" "}
+          <Link to="/register" className={styles.link}>
+            Register
+          </Link>
         </p>
       </form>
     </div>

@@ -4,10 +4,10 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
 import Dashboard from "../pages/Dashboard";
-// import Explore from "../pages/Explore";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 export default function AppRoutes() {
   const Explore = React.lazy(() => import("../pages/Explore"));
@@ -15,9 +15,11 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         {/* Dashboard Layout */}
-        <Route element={<DashboardLayout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/explore" element={<Explore />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route element={<DashboardLayout />}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/explore" element={<Explore />} />
+          </Route>
         </Route>
 
         {/* Auth Layout */}

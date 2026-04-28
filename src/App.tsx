@@ -1,5 +1,10 @@
 import AppRoutes from "./routes/AppRoutes";
+import { AuthProvider } from "./auth/AuthContext";
 
 export default function App() {
-  return <AppRoutes />;
+  return (
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
 }
